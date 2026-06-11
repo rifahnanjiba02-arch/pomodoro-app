@@ -1,3 +1,4 @@
+import "./style.css";
 let seconds = 25*60;
 
 let interval: number | null = null;
@@ -17,14 +18,27 @@ function render(){
 
     app.innerHTML =
     `
-    <h2>${mode}</h2>
-    <p>Completed Sessions: ${completedSessions}</p>
+    <div class="card">
+    
+    <h2 class="mode"> ${mode === "Work"
+    ? "🧸 Focus Time"
+    : "🍯 Break Time"}</h2>
 
-    <h1>${minutes}:${remainingSeconds.toString().padStart(2,"0")}</h1>
+    
 
+    <div class="timer">
+    ${minutes}:${remainingSeconds.toString().padStart(2,"0")}
+    </div>
+
+    <p class="sessions">🐻 Completed Sessions: ${completedSessions}</p>
+    
+    <div class="buttons">
     <button id="start">START</button>
     <button id="pause">PAUSE</button>
     <button id="reset">RESET</button>
+    </div>
+
+    </div>
     `;
 
 }

@@ -51,9 +51,100 @@
 }
 
 body {
+  font-family: Garamond;
   margin: 0;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items:center;
+
+  background: #f3e5d0;
+  background-image: url("./assets/teddy.jpg");
+
+  animation: moveBg 30s linear infinite;
+}
+  @keyframes moveBg {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 500px 0;
+  }
 }
 
+
+.card{
+  background:#fff7eb;
+  padding: 2.5rem;
+  border-radius: 50px;
+  text-align:center;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.301);
+
+  width: 340px;
+  border: 3px solid #d8b892;
+
+  transition: all 0.3s ease;
+
+}
+.mode{
+  color: #8b5e3c;
+  letter-spacing:2px;
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.timer{
+  font-size: 4.5rem;
+  font-weight: bold;
+
+  color:#6b4226;
+  margin: 50px 0;
+
+}
+.sessions{
+  color:#a67c52;
+  margin-bottom: 50px;
+}
+.buttons{
+  display: flex;
+  justify-content: center;
+  gap:10px;
+}
+button{
+  padding: 12px 18px;
+  border-radius: 15px;
+  border: none;
+
+  cursor:pointer;
+  font-weight: 500;
+
+  transition: 0.2s;
+}
+#start{
+  background: #b08968;
+  color: white;
+}
+#pause{
+  background: #ddb892;
+  color: #5c4033;
+}
+#reset{
+  background: #a47148;
+  color: white;
+}
+.card:hover {
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 20px 40px rgba(139, 94, 60, 0.25);
+}
+button:hover{
+  transform: translateY(-2px);
+}
 h1,
 h2 {
   font-family: var(--heading);
@@ -156,17 +247,7 @@ code {
   }
 }
 
-#app {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-}
+
 
 #center {
   display: flex;
