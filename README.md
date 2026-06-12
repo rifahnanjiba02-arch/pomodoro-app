@@ -1,14 +1,16 @@
 # Pomodoro App
 
-A simple Pomodoro timer built with Vite and TypeScript. The app focuses on a single timer card with work and break sessions, start/pause/reset controls, and a session counter.
+A simple Pomodoro timer built with Vite and TypeScript. The app uses a single card layout with work and break sessions, automatic session switching, and a completed session counter.
 
 ## Features
 
 - 25-minute focus sessions
 - 5-minute break sessions
 - Start, pause, and reset controls
+- Automatic switch between work and break modes
+- Browser alerts when a session ends
 - Completed session tracking
-- Custom styled UI with a decorative background
+- Decorative background and styled timer card
 
 ## Getting Started
 
@@ -17,7 +19,7 @@ A simple Pomodoro timer built with Vite and TypeScript. The app focuses on a sin
 - Node.js 18 or newer
 - npm
 
-### Install
+### Install dependencies
 
 ```bash
 npm install
@@ -29,7 +31,7 @@ npm install
 npm run dev
 ```
 
-Then open the local URL shown in the terminal.
+Open the local URL shown in the terminal.
 
 ### Build for production
 
@@ -49,15 +51,17 @@ npm run preview
 .
 |-- index.html
 |-- package.json
+|-- public
 |-- src
+|   |-- assets
 |   |-- main.ts
-|   |-- style.css
-|   `-- assets
+|   `-- style.css
 `-- tsconfig.json
 ```
 
 ## Notes
 
-- The timer logic lives in `src/main.ts`.
+- Timer logic lives in `src/main.ts`.
 - Styling lives in `src/style.css`.
-- Assets in `src/assets` are used for the page background and Vite starter media.
+- The page title updates to show the current mode and countdown.
+- The timer automatically returns to focus mode after the break ends.
